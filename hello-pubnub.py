@@ -1,3 +1,8 @@
+
+# This sends a Hello World message to PubNub data stream.
+# To monitor the data streaming to PubNub Data Stream Network, use Debug Console.
+
+
 import sys
 from pubnub import Pubnub
 
