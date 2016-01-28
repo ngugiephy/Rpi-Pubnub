@@ -1,2 +1,76 @@
-<!doctype htmml>
-<html>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>PUBNUB-LED-BLINK</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+    <!--  google fonts  -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <style type="text/css">
+      body {
+        font-family: 'Roboto', serif;
+      }
+
+    img {
+        width: ;
+        height: ;
+        background-color: ;
+        box-shadow: 0px 10px 7px #888888;
+    }
+    img.no-shadow {
+        width: ;
+        height: ;
+        background-color: ;
+        box-shadow: 0px 0px 0px #888888;
+    }
+    </style>
+  </head>
+  <body>
+    <div class="container-fuid">
+      <div class="row">
+        <div class="col-lg-6 col-lg-offset-3 col-md-6 col-md-offset-3 col-sm-6 col-sm-offset-3 col-xs-12" align="center">
+          <h1>PUBNUB-LED_BLINK</h1>
+          <button>Disco on!</button>
+        </div>
+      </div>
+    </div>
+    
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    
+    <!--  PUBNUB JS  -->
+    <script src="http://cdn.pubnub.com/pubnub-3.7.1.min.js"></script>
+    
+    <script> //click event handler
+      var channel = 'led-lights'
+      var p = PUBNUB.init({
+        subscribe_key: '',
+        publish_key: ''
+      });0
+      
+      //now we publish that the button has been pressed
+      document.querySelector('button').assEventListener('click', function(){
+        p.publish({
+          channel: channel,
+          message: {led: 1} //we have the trigger here
+        });
+      }, false);
+    </script>
+  </body>
+</html>
